@@ -18,6 +18,8 @@ def check_metadata(*, release: bool = False) -> list[str]:
         "README.md", "CHANGELOG.md", "AGENTS.md", "HANDOFF.md",
         "docs/reproducibility.md", "docs/release_manifest.md",
         "docs/zenodo_release.md",
+        "docs/release_notes.md",
+        "docs/environment_audit.md",
     ]
     for name in required:
         if not (ROOT / name).is_file():
@@ -67,8 +69,15 @@ def check_metadata(*, release: bool = False) -> list[str]:
             errors.append("Scientific release manifest has not been approved")
         if cff.get("version") != version or not cff.get("date-released"):
             errors.append("Version and date-released required in CITATION.cff for release")
-        if not (ROOT / "docs/verified_replication.md").is_file():
-            errors.append("Missing independently verified scientific replication record")
+        review_file = ROOT / "docs/verified_replication.md"
+        if not review_file.is_file():
+            errors.append("Missing scoped software/synthetic release verification record")
+        else:
+            review = review_file.read_text(encoding="utf-8")
+            if "Release scope: software-and-synthetic" not in review:
+                errors.append("Verification must identify the approved software-and-synthetic scope")
+            if "Not verified: licensed-market empirical results" not in review:
+                errors.append("Verification must explicitly exclude unverified market-data results")
         if f"## {version}" not in (ROOT / "CHANGELOG.md").read_text():
             errors.append("Missing versioned changelog section")
     return errors
@@ -85,8 +94,8 @@ def main() -> None:
     if errors:
         raise SystemExit("\n".join(errors))
     print("PASS: release metadata consistent" +
-          (" and scientific release gate satisfied" if args.release else
-           " (pre-release; not manuscript replication)"))
+          (" for approved software and synthetic scope" if args.release else
+           " (does not claim full empirical replication)"))
 
 
 if __name__ == "__main__":

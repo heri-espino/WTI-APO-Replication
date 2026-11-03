@@ -26,3 +26,9 @@ The public GitHub Actions workflow [#41687743436](https://github.com/heri-espino
 ## Release classification
 
 Current quality level: **tested partial-methods archive, not full-manuscript replication**. Do not change the `--release` gate to pass merely because the unit tests pass or an archived historical result exists. A future first release may be explicitly scoped to methods and synthetic evidence after rights review, independent numerical convergence checks and explicit approval.
+
+## v1.0.0 preparation audit
+
+The merged release-workflow commit `93233d4010d637225cddddb4055d5a62fbd60f3f` passed **75 tests with one warning** on [Actions run 41704816775](https://github.com/heri-espino/WTI-APO-Replication/actions/runs/41704816775), including installation, syntax/import tests, CFF schema validation, synthetic reference comparison and public-data safety checks. Version-1.0.0 metadata/approval validation is performed on the separate release-preparation PR and must pass again on the final release commit.
+
+The recorded Linux dependency versions above belong to an earlier successful run and remain **observed versions**, not a complete frozen Conda lockfile. The 10-million-history synthetic archive was preserved from a previous run; it has **not** been independently rerun here. The paid-data empirical panels were not verified in public CI.

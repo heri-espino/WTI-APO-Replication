@@ -2,7 +2,7 @@
 
 Versions will follow Semantic Versioning when scientific release criteria are met.
 
-## Unreleased — `0.1.0.dev0`
+## 1.0.0 — 2026-11-03 (first stable software/synthetic release)
 
 - Preserve a data-free ten-million synthetic mechanism-map source and historical aggregate tables under sequential `experiment002`, with source provenance and audit tests.
 
@@ -13,4 +13,4 @@ Versions will follow Semantic Versioning when scientific release criteria are me
 - Add safety/metadata CI and manual release-preview build workflow.
 - Document the legal, scientific and double-anonymized-review prerequisites to release.
 
-**Not released:** private research code/history, licensed Barchart/Databento observations, empirical results, final manuscript-replication package, stable GitHub Release or DOI.
+**Outside this release scope:** private research history, licensed Barchart/Databento observations, complete commercial-data empirical verification, and full-manuscript replication. Publishing GitHub v1.0.0 and obtaining a Zenodo DOI are separate actions.
