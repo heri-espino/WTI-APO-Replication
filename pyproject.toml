@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wti-apo-replication"
-version = "0.1.0.dev0"
+version = "1.0.0"
 description = "Bayesian volatility inference and Asian-option pricing methods with synthetic verification"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -13,7 +13,6 @@ license-files = ["LICENSE"]
 authors = [{ name = "Heriberto Espino-Montelongo" }]
 keywords = ["Asian options", "Monte Carlo", "reproducibility", "WTI"]
 classifiers = [
-  "Development Status :: 2 - Pre-Alpha",
   "Intended Audience :: Science/Research",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",

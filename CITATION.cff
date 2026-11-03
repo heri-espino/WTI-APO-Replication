@@ -1,12 +1,14 @@
 cff-version: 1.2.0
-message: "For a tagged release, cite its version-specific Zenodo DOI when available."
+message: "Cite the version-specific Zenodo DOI when available; until then cite this versioned GitHub software source."
 type: software
-title: "WTI APO Replication"
+title: "WTI APO Replication: Bayesian and Asian-Option Methods with Synthetic Benchmarks"
 authors:
   - family-names: "Espino-Montelongo"
     given-names: "Heriberto"
 repository-code: "https://github.com/heri-espino/WTI-APO-Replication"
 license: "MIT"
+version: 1.0.0
+date-released: 2026-11-03
 keywords:
   - "Asian options"
   - "Monte Carlo simulation"
