@@ -1,6 +1,6 @@
 # Handoff — Zenodo-ready repository foundation
 
-**Stage:** `0.1.0.dev0` pre-release. The repository has an MIT license, `CITATION.cff`, `pyproject.toml`, `environment.yml`, a minimal installable package and a standalone synthetic Monte Carlo example. **No GitHub Release, Zenodo record, DOI, commercial data or manuscript-specific empirical replication is published.**
+**Stage:** `0.1.0.dev0` pre-release. **Repository cleanup (2026-11-03):** PR #3's package foundation was merged; obsolete placeholder READMEs under `src/`, `scripts/`, `tests/`, `examples/`, and `results/` were removed. The authoritative release status remains in this handoff, `docs/release_manifest.md`, and `docs/reproducibility.md`. Do not recreate empty placeholder directories; add them only when approved source, fixtures, or output files exist. The repository has an MIT license, `CITATION.cff`, `pyproject.toml`, `environment.yml`, a minimal installable package and a standalone synthetic Monte Carlo example. **No GitHub Release, Zenodo record, DOI, commercial data or manuscript-specific empirical replication is published.**
 
 ## Architecture
 
