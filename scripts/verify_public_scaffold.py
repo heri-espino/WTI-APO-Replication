@@ -20,10 +20,25 @@ PRIVATE_IDENTIFIERS = (
     "@".join(("heriberto.espinomo", "udlap.mx")),
     "-".join(("0009", "0009", "1230", "2931")),
 )
+APPROVED_SYNTHETIC_CSV = {
+    "results/experiment002/archive_10m/mechanism_map_summary.csv",
+    "results/experiment002/archive_10m/posterior_cell_summary.csv",
+    "results/experiment002/archive_10m/scenario_grid.csv",
+    "results/experiment002/archive_10m/top_100_adverse_scenarios.csv",
+}
 MANDATORY_FILES = (
     "README.md", "AGENTS.md", "HANDOFF.md",
     "docs/reproducibility.md", "docs/release_manifest.md",
 )
+
+
+def _is_number(value: str) -> bool:
+    """Accept finite numbers and declared not-a-number correlation fields."""
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
 
 
 def check_release_scaffold() -> list[str]:
@@ -41,7 +56,7 @@ def check_release_scaffold() -> list[str]:
         path = ROOT / relative
         name = relative.as_posix()
         lowered = name.lower()
-        if lowered.startswith("data/") or lowered.endswith(DISALLOWED_EXTENSIONS):
+        if lowered.startswith("data/") or (lowered.endswith(DISALLOWED_EXTENSIONS) and name not in APPROVED_SYNTHETIC_CSV):
             failures.append(f"Unreviewed or proprietary file type/path: {name}")
             continue
         if not path.is_file():
@@ -52,6 +67,19 @@ def check_release_scaffold() -> list[str]:
         except UnicodeDecodeError:
             failures.append(f"Binary file without release approval: {name}")
             continue
+        if name in APPROVED_SYNTHETIC_CSV:
+            header, *rows = content.strip().splitlines()
+            columns = header.split(",")
+            if not columns or any(not field.replace("_", "").isalnum() for field in columns):
+                failures.append(f"Invalid synthetic CSV header: {name}")
+            for row in rows:
+                values = row.split(",")
+                if len(values) != len(columns):
+                    failures.append(f"Wrong synthetic CSV field count: {name}")
+                    break
+                if any(value and not _is_number(value) for value in values):
+                    failures.append(f"Non-numeric synthetic CSV values: {name}")
+                    break
         for identifier in PRIVATE_IDENTIFIERS:
             if identifier.casefold() in content.casefold():
                 failures.append(f"Private identity/source reference in public file: {name}")
