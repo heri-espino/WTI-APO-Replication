@@ -1,48 +1,54 @@
 # WTI APO Replication
 
-**Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
+**Status: pre-release `0.1.0.dev0`. Reproducible mathematical methods and a synthetic PI–PM experiment are available; manuscript-scale and market-data results are not reproduced.**
 
-This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The current Python package includes a small, original **synthetic spot-GBM example**, not the empirical model or published WTI option results. Third-party Barchart and Databento market records are not distributed.
+This public software package is independently versioned from the author's private WTI research workspace. It contains an **audited, code-only subset** of the actual research methods: physical-measure GBM volatility inference, marginal volatility-posterior quadrature, risk-neutral arithmetic Asian option valuation, and a one-factor partially fixed WTI-like average-price option pricer.
 
-## Quick start
+No commercial Barchart/Databento records, private Git history, market-derived rows, or confidential vendor data have been imported.
 
-Python 3.11+ is required. From the repository root:
+## Setup
+
+Requires Python 3.11+.
 
 ```bash
 conda env create -f environment.yml
 conda activate wti-apo-replication
 python -m pytest -q
-wti-apo-synthetic --paths 4096 --observations 12 --seed 2026
 ```
 
-Or use a Python virtual environment:
+Or use `python -m pip install -e ".[dev]"` in a Python environment. Dependency ranges are provided for development; a verified publication lockfile is still required.
+
+## Run a transparent synthetic PI–PM experiment
 
 ```bash
-python -m pip install -e ".[dev]"
-python -m pytest -q
-python -m wti_apo_replication.synthetic --paths 4096 --seed 2026
+python -m experiments.experiment001.run --seed 2026 --pricing-paths 1024
 ```
 
-The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
+This independently generates physical-measure GBM returns, integrates over a posterior volatility grid, and compares the posterior-integrated option value with the value at posterior-mean volatility using common random numbers. **All fixing values and futures levels are artificial.**
 
-## Repository files
+To save the summary for versioned review:
 
-| File | Purpose |
-|---|---|
-| [`pyproject.toml`](pyproject.toml) | Installable Python package, dependencies, and development version |
-| [`environment.yml`](environment.yml) | Conda environment for development |
-| [`LICENSE`](LICENSE) | MIT license for original public source and documentation |
-| [`CITATION.cff`](CITATION.cff) | GitHub citation metadata, suitable for later Zenodo ingestion |
-| [`CHANGELOG.md`](CHANGELOG.md) | Version and release history |
-| [`docs/zenodo_release.md`](docs/zenodo_release.md) | Release checklist and Zenodo integration instructions |
-| [`docs/reproducibility.md`](docs/reproducibility.md) | Scientific limits and reproduction boundaries |
-| [`docs/release_manifest.md`](docs/release_manifest.md) | Rights/provenance approvals for public materials |
-| [`AGENTS.md`](AGENTS.md), [`HANDOFF.md`](HANDOFF.md) | AI-agent instructions and implementation handoff |
+```bash
+python -m experiments.experiment001.run --seed 2026 --pricing-paths 1024 --output results/experiment001/summary.json
+```
 
-Automated CI runs only quick tests, syntax/metadata validation, and a tracked-file privacy audit. A **manual-only release preview** can build a source distribution and wheel without publishing a release or archiving to Zenodo.
+The full report and production-scale numerical evidence have **not** been certified for reproduction here. See [experiment001](experiments/experiment001/README.md), [released methods](docs/scientific_methods.md), [data input contract](docs/data_contract.md) and [limitations](docs/reproducibility.md).
 
-## Licensing, citation, and privacy
+The pre-existing standalone spot-GBM instructional demonstration remains available as `wti-apo-synthetic --seed 2026`.
 
-MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific code, numerical results, and market-derived aggregates require scientific and redistribution-rights review before copying.
+## Public methods
 
-[`CITATION.cff`](CITATION.cff) contains preliminary attribution but **no invented DOI**. Once an authorized GitHub Release is archived by Zenodo, cite the verified version-specific DOI. Do **not** cite this scaffold as a reproduction of any unpublished manuscript.
+- `wti_apo_replication.gbm_inference`
+- `wti_apo_replication.sigma_quadrature`
+- `wti_apo_replication.asian_pricing`
+- `wti_apo_replication.average_price_option`
+
+The release manifest records the original internal blob identifiers of the curated source and its unit tests without transferring the private repository's history. The numerical assumptions include a **single shared Brownian risk factor for remaining forward fixings**, which should not be interpreted as the actual exchange settlement model.
+
+## Archiving and legal status
+
+This original public code is MIT licensed; **vendor market data and rights-restricted derived results are excluded**. Reproducing empirical results requires separately licensed source data, as-of-date provenance and eligibility rules.
+
+[Software citation](CITATION.cff) · [License](LICENSE) · [Release manifest](docs/release_manifest.md) · [Zenodo release guide](docs/zenodo_release.md) · [Agent instructions](AGENTS.md) · [Handoff](HANDOFF.md)
+
+No GitHub Release or Zenodo DOI exists yet. A DOI will identify the exact archived software version, not certify the full scientific study.
