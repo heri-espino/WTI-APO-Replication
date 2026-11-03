@@ -6,7 +6,7 @@ Before changes, inspect README.md, AGENTS.md, HANDOFF.md, docs/reproducibility.m
 
 - Do not import private history, licensed market data, restricted derived outputs, credentials, original private manifests or confidential author correspondence.
 - MIT applies only to original public code/documentation, not third-party/private research.
-- Keep the independently implemented synthetic GBM example distinguished from the paper's market-data and Bayesian research.
+- The public package contains a reviewed subset of private-workspace mathematical code (GBM posterior inference, sigma quadrature, Asian option pricing) and an independently implemented teaching example. Distinguish these data-independent methods and synthetic tests from the unreleased market-data pipeline and manuscript-scale results.
 - Record licenses, source provenance and verification for each approved scientific addition in docs/release_manifest.md.
 - Keep all approved code/tests/configurations/results and future experiments reproducible in this Git repository.
 - Number numerical experiments sequentially (`experiment001`, `experiment002`, ...). Document purpose, method, commands, results, uncertainty, and next steps.
