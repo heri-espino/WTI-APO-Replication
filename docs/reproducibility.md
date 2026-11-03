@@ -7,7 +7,7 @@
 | Physical GBM inference | Return simulator, likelihood, Metropolis, numerical tests | Licensed observed returns |
 | Posterior volatility | Gaussian drift-marginal quadrature on a specified grid, analytic comparison tests | Full manuscript's 10-million-history output |
 | Risk-neutral option values | Arithmetic Asian control-variate MC, partially fixed one-factor APO MC, synthetic numerical invariants | Verified exchange settlement model and entire original empirical pipeline |
-| Experiment | `experiment001` synthetic PI–PM demonstration with deterministic seed | Published aggregate mechanism maps and raw result archive |
+| Experiments | `experiment001` synthetic PI–PM demonstration and `experiment002` original 10M synthetic driver with historical aggregate summaries | Independent reproduction of the resource-intensive run and per-history random draws |
 | Market inputs | Public numerical interface documented in `data_contract.md` | Barchart and Databento raw records, full timing audit |
 | Release environment | Python package and editable Conda environment | Fully pinned platform lock and independent long-run verification |
 
@@ -26,6 +26,10 @@ python scripts/verify_public_scaffold.py
 python scripts/validate_release_metadata.py
 python -m experiments.experiment001.run --seed 2026 --pricing-paths 1024
 ```
+
+## Archived ten-million synthetic evidence
+
+The public archive contains 5,880 synthetic scenario summaries, 35 posterior-cell aggregates, 168 artificial fixing scenarios and 100 ranked adverse scenarios. The archived report records 10,000,000 generated histories and 4,097 quadrature nodes. This historical numerical evidence is supplied with the original source blob identities. A new 10M execution has **not** been performed here. See `experiments/experiment002/README.md`.
 
 ## Full manuscript replication gate
 
