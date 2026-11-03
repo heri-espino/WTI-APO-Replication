@@ -25,6 +25,18 @@ python -m wti_apo_replication.synthetic --paths 4096 --seed 2026
 
 The project also exposes `bayesian_asian_options` modules (see [available scientific methods](docs/reproducibility.md)) and synthetic regression tests. The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
 
+## Archived synthetic mechanism-map evidence
+
+The [experiment002](experiments/experiment002/README.md) driver is a curated version of the original Gaussian-volatility-quadrature / Curran-pricing mechanism study. Its historical **ten-million synthetic return histories** are documented by the [archived scenario summaries](results/experiment002/archive_10m/) (5,880 rows over 168 synthetic option states), a 35-cell posterior summary, and a redacted run report. **This is not a new independent rerun.** No Barchart/Databento observations were transferred.
+
+Run the small, non-publication configuration manually from the repository root:
+
+```bash
+python -m experiments.experiment002.run --preset quick --backend numpy
+```
+
+The original `--preset ten-million` run is resource-intensive and remains manual-only. The empirical settlement-proxy and implied-volatility comparisons cannot be reproduced without separately licensed data.
+
 ## Repository files
 
 | File | Purpose |
