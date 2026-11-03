@@ -37,6 +37,19 @@ python -m experiments.experiment002.run --preset quick --backend numpy
 
 The original `--preset ten-million` run is resource-intensive and remains manual-only. The empirical settlement-proxy and implied-volatility comparisons cannot be reproduced without separately licensed data.
 
+## Licensed-input empirical entry points
+
+The repo also contains CLI sources for contract-date option valuation, date-panel construction, Curran benchmarks, and implied-volatility comparisons. These scripts can be inspected offline:
+
+```bash
+python -m experiments.wti_apo_empirical --help
+python -m experiments.wti_apo_date_panel --help
+python -m experiments.wti_curran_benchmark --help
+python -m experiments.wti_apo_implied_volatility --help
+```
+
+They require authorized vendor inputs and applicable cutoff/expiry/reference files to execute the actual empirical study. A passing `--help` smoke test does **not** verify numerical reproduction; there are no licensed market records in this repo. The complete [ten-million synthetic mechanism archive](experiments/experiment002/README.md) remains separate from these empirical routines.
+
 ## Repository files
 
 | File | Purpose |
