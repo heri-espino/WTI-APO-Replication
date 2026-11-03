@@ -1,5 +1,15 @@
 # GitHub release and Zenodo preservation
 
+## v1.0.0 published release (2026-11-03)
+
+- **GitHub release:** [v1.0.0](https://github.com/heri-espino/WTI-APO-Replication/releases/tag/v1.0.0)
+- **Immutable tag commit:** `93f657607307909e088fd8f77fcc772e10d63fd9`
+- **Zenodo DOI reported by the repository owner:** [10.5281/zenodo.23932925](https://doi.org/10.5281/zenodo.23932925)
+- **Release scope:** curated research software and synthetic benchmarks; no licensed-market empirical reproduction or proprietary raw data
+
+The DOI was reported on Zenodo's GitHub integration release list. Follow the DOI to confirm the archived record and metadata before relying on it externally. The version-tagged GitHub snapshot is immutable; changes to `main` after this release (including its DOI badge and citation-file update) **do not change the contents of the archived v1.0.0 release**. Do not recreate or overwrite the tag to backfill documentation. For a future release, increment the package and citation version and update the `doi` field appropriately: do not reuse the v1.0.0 version DOI as if it identified new release files.
+
+
 The author approved the **v1.0.0 software-and-synthetic scope** on November 3, 2026. The strict release metadata gate can now validate this limited scope; it does **not** certify the manuscript’s licensed-market empirical results. Zenodo archival remains dependent on the repository owner enabling integration **before** publishing the verified GitHub Release.
 
 ## Source-of-truth files
@@ -7,7 +17,7 @@ The author approved the **v1.0.0 software-and-synthetic scope** on November 3, 2
 - `pyproject.toml`: stable software package version `1.0.0`, dependencies, build settings.
 - `environment.yml`: developer setup, **not** a complete frozen lockfile.
 - `LICENSE`: MIT for original public software only.
-- `CITATION.cff`: approved v1.0.0 authorship, license, version and intended release date. It has no DOI until Zenodo assigns one.
+- `CITATION.cff`: approved v1.0.0 authorship, license, version and intended release date. Its v1.0.0 version DOI is now recorded; check the archived record for exact metadata.
 - `CHANGELOG.md`: version history.
 - `docs/release_manifest.md`: reviewed public-file allowlist and third-party rights gate.
 

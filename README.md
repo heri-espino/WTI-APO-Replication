@@ -1,6 +1,9 @@
 # WTI APO Replication
 
-**Software version: v1.0.0 — approved scope: Bayesian and Asian-option methods with synthetic benchmarks.** The full licensed-market empirical study is **not** reproduced by this archive. A Zenodo DOI is available only after a GitHub Release has been ingested; check [GitHub Releases](https://github.com/heri-espino/WTI-APO-Replication/releases) for the publication status.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23932925.svg)](https://doi.org/10.5281/zenodo.23932925)
+
+
+**Software version: v1.0.0 — approved scope: Bayesian and Asian-option methods with synthetic benchmarks.** The full licensed-market empirical study is **not** reproduced by this archive. The [GitHub v1.0.0 release](https://github.com/heri-espino/WTI-APO-Replication/releases/tag/v1.0.0) was published on 2026-11-03 and its reported Zenodo version DOI is [10.5281/zenodo.23932925](https://doi.org/10.5281/zenodo.23932925). The Git tag fixes the archived source snapshot.
 
 This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed. Data-format adapters for independently licensed inputs and synthetic-only adapter tests are available; see [licensed input requirements](docs/licensed_inputs.md).
 
@@ -44,7 +47,7 @@ The original `--preset ten-million` run is resource-intensive and remains manual
 | [`pyproject.toml`](pyproject.toml) | Installable Python package, dependencies, and stable software version `1.0.0` |
 | [`environment.yml`](environment.yml) | Conda environment for development |
 | [`LICENSE`](LICENSE) | MIT license for original public source and documentation |
-| [`CITATION.cff`](CITATION.cff) | GitHub citation metadata, suitable for later Zenodo ingestion |
+| [`CITATION.cff`](CITATION.cff) | Software citation with the v1.0.0 Zenodo DOI |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version and release history |
 | [`docs/zenodo_release.md`](docs/zenodo_release.md) | Release checklist and Zenodo integration instructions |
 | [`docs/reproducibility.md`](docs/reproducibility.md) | Scientific limits and reproduction boundaries |
@@ -57,4 +60,4 @@ Automated CI runs only quick tests, citation validation, scientific scope checks
 
 MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific **empirical orchestration**, numerical market results, and market-derived aggregates require scientific and redistribution-rights review before copying. The subset of model functions now included was selected for being self-contained and data-free; the original private Git history was not imported.
 
-[`CITATION.cff`](CITATION.cff) records **version 1.0.0** and the approved release metadata, but does **not** invent a DOI. After Zenodo ingests an authorized GitHub Release, cite its verified version-specific DOI. This package is **methods and synthetic benchmarks**, not verified reproduction of unpublished licensed-market empirical findings. See [scoped verification](docs/verified_replication.md).
+[`CITATION.cff`](CITATION.cff) records **version 1.0.0** and the reported Zenodo DOI **[10.5281/zenodo.23932925](https://doi.org/10.5281/zenodo.23932925)**. To cite the immutable v1.0.0 source, use this DOI; GitHub's current `main` branch may include post-release documentation changes that are **not** part of the Zenodo v1.0.0 archive. This package is **methods and synthetic benchmarks**, not verified reproduction of unpublished licensed-market empirical findings. See [scoped verification](docs/verified_replication.md).

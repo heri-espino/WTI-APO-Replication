@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite the version-specific Zenodo DOI when available; until then cite this versioned GitHub software source."
+message: "If you use version 1.0.0 of this software, cite the archived Zenodo release."
 type: software
 title: "WTI APO Replication: Bayesian and Asian-Option Methods with Synthetic Benchmarks"
 authors:
@@ -8,6 +8,7 @@ authors:
 repository-code: "https://github.com/heri-espino/WTI-APO-Replication"
 license: "MIT"
 version: 1.0.0
+doi: 10.5281/zenodo.23932925
 date-released: 2026-11-03
 keywords:
   - "Asian options"
