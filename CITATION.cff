@@ -13,6 +13,7 @@ keywords:
   - "reproducible research"
   - "commodity derivatives"
 abstract: >-
-  Public, version-controlled preparation of software and replication materials
-  for average-price option research. The current pre-release includes an
-  independent synthetic example, but does not reproduce commercial-data results.
+  Audited code-only methods for GBM posterior volatility estimation, Gaussian
+  marginal quadrature, and arithmetic Asian option pricing, with an independent
+  synthetic posterior-integration comparison. Licensed market observations and
+  manuscript-scale numerical results are not included in this pre-release.
