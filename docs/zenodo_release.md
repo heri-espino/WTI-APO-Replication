@@ -24,6 +24,16 @@ This repository is a **pre-release development workspace**. Do not create a GitH
 7. Change the version in `pyproject.toml` to the approved stable release number. Synchronize `CITATION.cff` version/date if added, update the changelog and manifest, and confirm reproducibility is documented.
 8. Run `python scripts/validate_release_metadata.py --release`. This **must fail at present**, while scientific release approval is outstanding.
 
+## Release-specific review of the synthetic methods archive
+
+**Verified on GitHub:** commit `fee20d6e9c60784cb21a8229d26aeec04589b429` passed 69 tests and release-metadata checks on [GitHub Actions #41687743436](https://github.com/heri-espino/WTI-APO-Replication/actions/runs/41687743436). The 10M data-free mechanism-map summary is **historical**; it has not been independently recomputed from the public environment. The archived four CSVs and redacted report are covered by focused content checks.
+
+**Defensible first release scope:** “Bayesian and Asian-option methods with synthetic benchmarks” — NOT “full empirical replication of WTI APO settlement comparisons.” The full paper's third-party licensed histories, vendor as-of verification and conditional error panels remain unavailable publicly. Do not use the software DOI to imply verification of these results.
+
+**Before creating v0.1.0:** confirm author/rightsholder approval to license the imported research code under MIT, check double-anonymized-review risk, run the manual release-preview wheel/sdist build, review the distribution file inventory, pin/document the exact environment and record a scoped scientific review. The current `--release` gate intentionally remains unsatisfied.
+
+**Capabilities:** This connection can edit GitHub source and merge PRs but cannot create GitHub Releases or configure the author's Zenodo account. Once the release gates are satisfied, the repository owner must publish a GitHub Release and enable GitHub-to-Zenodo archiving (or use an authorized interactive workflow).
+
 ## First Zenodo archive
 
 1. Sign in to [Zenodo](https://zenodo.org), connect GitHub, select its GitHub section, choose **Sync now**, and enable `heri-espino/WTI-APO-Replication`.
