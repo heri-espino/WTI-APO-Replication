@@ -1,6 +1,6 @@
 # Handoff — curated WTI APO methods and Zenodo preparation
 
-**Status:** public scientific methods under development, version `0.1.0.dev0`. The package includes the actual GBM posterior inference, sigma quadrature, Asian pricing and partially fixed fixing modules from the author's research, with original adapted tests and a new synthetic PI–PM experiment. No proprietary raw data, private Git history, or completed manuscript-scale empirical reproduction were released.
+**Status:** public scientific methods under development, version `0.1.0.dev0`. The package includes the actual GBM posterior inference, sigma quadrature, Asian pricing and partially fixed fixing modules from the author's research, with original adapted tests and a new synthetic PI–PM experiment; the original massive synthetic mechanism-map driver, Curran pricing approximation, ten-million historical aggregate summaries and tiny-cell tests are also staged. No proprietary raw data, private Git history, or completed manuscript-scale empirical reproduction were released.
 
 **Provenance:** see `docs/release_manifest.md` for exact original source blob hashes and what was excluded. The existing MIT license applies to published code only, not vendor data. Confirm author control and rights before any stable release.
 
