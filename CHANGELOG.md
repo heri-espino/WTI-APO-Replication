@@ -10,4 +10,7 @@ Versions will follow Semantic Versioning when scientific release criteria are me
 - Add safety/metadata CI and manual release-preview build workflow.
 - Document the legal, scientific and double-anonymized-review prerequisites to release.
 
-**Not released:** private research code/history, licensed Barchart/Databento observations, empirical results, final manuscript-replication package, stable GitHub Release or DOI.
+- Curated numerical methods for GBM inference, volatility quadrature and Asian option pricing from the author's research, with scientific unit tests.
+- Added synthetic experiment001 for posterior integration versus posterior-mean plug-in pricing.
+
+**Not released:** private history, licensed Barchart/Databento observations, empirical results, the full manuscript-scale mechanism experiment, stable GitHub Release or DOI.
