@@ -7,7 +7,9 @@
 | Python packaging | `pyproject.toml`, Conda environment, installation and CI tests | Fully frozen, cross-platform publication environment |
 | Numerical scientific core | Gaussian/Student-t Bayesian inference, sigma quadrature, Asian futures pricing, first-nearby mapping, partially fixed WTI APO Monte Carlo, Curran approximation, synthetic validation | Full production experiment orchestration and recorded empirical input provenance |
 | Synthetic arithmetic Asian | Independent risk-neutral spot-GBM Monte Carlo example; fixed seed and zero-volatility tests | Published experiment configuration and full numerical results |
-| Commercial market observations | No raw observations; publicly reviewed parsing interfaces with synthetic tests | Authorized provider inputs and complete acquisition/cutoff instructions |
+| Offline empirical orchestration | Contract-date pricing, data panel, Curran and implied-volatility scripts with CLI smoke checks | Authorized observations, full regression validation and vendor cutoff audit |
+| Synthetic phase-map experiment002 | Original Gaussian-quadrature mechanism-map source and manual CLI documented | Re-run full published configuration and independently verify saved results |
+| Commercial market observations | No raw observations; vendor-format parsing interfaces with synthetic tests | Authorized provider inputs and complete acquisition/cutoff instructions |
 | Empirical numerical results | None | Reviewed scripts, rights-cleared aggregates and result audits |
 | Publication figures/tables | None | Source-to-figure code, configuration and verified numerical comparisons |
 
