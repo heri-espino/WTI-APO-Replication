@@ -1,0 +1,44 @@
+# Developer files and credentials
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Never copy commercial market data or local research stores into public Git.
+data/
+*.dbn
+*.dbn.zst
+*.sqlite
+*.sqlite3
+*.db
+*.parquet
+*.feather
+*.arrow
+*.pickle
+*.pkl
+*.joblib
+*.csv
+*.csv.gz
+*.tsv
+*.gz
+*.zst
+
+# Large and potentially identifying compiled artifacts require explicit review.
+*.pdf
+*.png
+*.svg
+*.jpg
+*.jpeg
+*.zip
+*.tar
+*.7z
