@@ -8,6 +8,7 @@ Versions will follow Semantic Versioning when scientific release criteria are me
 - Add `CITATION.cff` metadata for future GitHub-to-Zenodo software archiving.
 - Include an independent synthetic spot-GBM arithmetic Asian Monte Carlo demonstration and fast tests.
 - Curate data-free, author-controlled Bayesian GBM/Student-t inference, Gaussian quadrature, Asian futures pricing, Curran approximation, partial-fixing WTI APO Monte Carlo, first-nearby mapping and corresponding synthetic regression tests.
+- Add offline empirical orchestration entry points, provider-format preprocessing and a separate manual-only synthetic 10-million-history mechanism-map implementation; no licensed market rows or large numerical outputs published.
 - Add safety/metadata CI and manual release-preview build workflow.
 - Document the legal, scientific and double-anonymized-review prerequisites to release.
 
