@@ -24,3 +24,7 @@ python scripts/validate_release_metadata.py
 ```
 
 The `--release` gate is intentionally blocked until publication-specific verification and author approval.
+
+## Release automation safety
+
+The only publishing workflow is manual-only (`publish-verified-release.yml`). Do not add release triggers to push or PR events, do not remove the explicit approval confirmations, and never bypass `scripts/validate_release_metadata.py --release`. A DOI may be obtained through Zenodo only after the repository owner enables its GitHub integration and the GitHub Release is actually published.
