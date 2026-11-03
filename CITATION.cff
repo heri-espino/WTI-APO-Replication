@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "For a tagged release, cite its version-specific Zenodo DOI when available."
+type: software
+title: "WTI APO Replication"
+authors:
+  - family-names: "Espino-Montelongo"
+    given-names: "Heriberto"
+repository-code: "https://github.com/heri-espino/WTI-APO-Replication"
+license: "MIT"
+keywords:
+  - "Asian options"
+  - "Monte Carlo simulation"
+  - "reproducible research"
+  - "commodity derivatives"
+abstract: >-
+  Public, version-controlled preparation of software and replication materials
+  for average-price option research. The current pre-release includes an
+  independent synthetic example, but does not reproduce commercial-data results.

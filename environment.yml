@@ -1,0 +1,11 @@
+name: wti-apo-replication
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=2.0,<3.0
+  - pytest>=8.0,<10.0
+  - pyyaml>=6.0,<7.0
+  - pip:
+      - -e .[dev]
