@@ -2,7 +2,7 @@
 
 **Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
 
-This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The current Python package includes a small, original **synthetic spot-GBM example**, not the empirical model or published WTI option results. Third-party Barchart and Databento market records are not distributed.
+This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed.
 
 ## Quick start
 
@@ -23,7 +23,7 @@ python -m pytest -q
 python -m wti_apo_replication.synthetic --paths 4096 --seed 2026
 ```
 
-The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
+The project also exposes `bayesian_asian_options` modules (see [available scientific methods](docs/reproducibility.md)) and synthetic regression tests. The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
 
 ## Repository files
 
@@ -43,6 +43,6 @@ Automated CI runs only quick tests, syntax/metadata validation, and a tracked-fi
 
 ## Licensing, citation, and privacy
 
-MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific code, numerical results, and market-derived aggregates require scientific and redistribution-rights review before copying.
+MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific **empirical orchestration**, numerical market results, and market-derived aggregates require scientific and redistribution-rights review before copying. The subset of model functions now included was selected for being self-contained and data-free; the original private Git history was not imported.
 
-[`CITATION.cff`](CITATION.cff) contains preliminary attribution but **no invented DOI**. Once an authorized GitHub Release is archived by Zenodo, cite the verified version-specific DOI. Do **not** cite this scaffold as a reproduction of any unpublished manuscript.
+[`CITATION.cff`](CITATION.cff) contains preliminary attribution but **no invented DOI**. Once an authorized GitHub Release is archived by Zenodo, cite the verified version-specific DOI. Do **not** cite this code-only development branch as an independently verified reproduction of unpublished empirical findings.
