@@ -2,7 +2,7 @@
 
 **Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
 
-This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed. Data-format adapters for independently licensed inputs and synthetic-only adapter tests are available; see [licensed input requirements](docs/licensed_inputs.md).
+This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed. Data-format adapters and an **offline, licensed-input empirical analysis CLI** are available; see [licensed input requirements](docs/licensed_inputs.md). The empirical scripts require third-party licensed observations supplied by the user, and this repository does not include those inputs or claim to reproduce the corresponding published numbers.
 
 ## Quick start
 
@@ -23,7 +23,7 @@ python -m pytest -q
 python -m wti_apo_replication.synthetic --paths 4096 --seed 2026
 ```
 
-The project also exposes `bayesian_asian_options` modules (see [available scientific methods](docs/reproducibility.md)) and synthetic regression tests. The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
+The project exposes `bayesian_asian_options` methods and offline empirical scripts (see [available scientific methods](docs/reproducibility.md)), including a manual-only synthetic mechanism-map [experiment002](experiments/experiment002/README.md), alongside synthetic regression tests. The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
 
 ## Repository files
 
