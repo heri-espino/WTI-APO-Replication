@@ -9,6 +9,8 @@
 | `src/bayesian_asian_options/*.py` (10 files) | Author-controlled, data-free scientific source selected for public review | Original regression tests; clean-environment CI pending | Public development branch; not full empirical replication |
 | `tests/test_*.py` (curated 10 files) | Purely synthetic, fixed-seed regression tests, no commercial datasets | Automated unit checks pending | Public development branch |
 | Vendor-format adapters `barchart_apo.py`, `databento_wti.py` | Author-controlled parsers, no vendor records | Synthetic data-format tests | Public development; licensed files remain excluded |
+| Offline empirical scripts (4 entry points) | Author-selected Python source only; original data remain separately licensed | Import/`--help` checks without vendor files, not a full empirical rerun | Source available; empirical results restricted |
+| Futures-curve, rate and Yahoo helpers (4 modules) | Author-controlled parsing and query helper code; no committed licensed records | Synthetic Barchart CL fixture and import checks | Code available; network/data access optional |
 | Barchart/Databento market records | Third-party commercial licenses | Not eligible for public transfer | Excluded |
 | Production empirical analysis and full posterior-integration experiments | Private research workspace | No independent full reproduction | Not released |
 | Derived market tables/figures | Publication and rights review pending | Not verified or approved | Not released |
