@@ -33,3 +33,5 @@ jobs:
           cffconvert --validate
       - name: Run unit tests
         run: python -m pytest -q
+      - name: Generate data-free experiment001 reference summary
+        run: python -m experiments.experiment001.run --seed 2026 --grid-points 301
