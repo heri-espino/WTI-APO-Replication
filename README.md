@@ -1,19 +1,48 @@
 # WTI APO Replication
 
-This repository is reserved for a **curated public replication package** for research on WTI average-price option valuation.
+**Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
 
-**Status: pre-release.** The publication-specific research code, numerical outputs, and data-reconstruction materials have **not** been released here. The current contents do **not** reproduce a manuscript's reported results. Do not cite this repository as a completed replication archive.
+This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The current Python package includes a small, original **synthetic spot-GBM example**, not the empirical model or published WTI option results. Third-party Barchart and Databento market records are not distributed.
 
-## Release approach
+## Quick start
 
-Only independently reviewed, redistributable source code, tests, synthetic examples, dependency specifications, and permitted numerical summaries will be added. Licensed commercial market observations are **not** included. Reproducing analyses that require those observations will require separately authorized access to the relevant data providers.
+Python 3.11+ is required. From the repository root:
 
-The private research workspace is deliberately **not** mirrored here. Its Git history, development notes, internal artifacts, licensing material, and sensitive configuration will remain private.
+```bash
+conda env create -f environment.yml
+conda activate wti-apo-replication
+python -m pytest -q
+wti-apo-synthetic --paths 4096 --observations 12 --seed 2026
+```
 
-## Project status and documentation
+Or use a Python virtual environment:
 
-- [Reproducibility and release gates](docs/reproducibility.md)
-- [Agent instructions](AGENTS.md)
-- [Handoff](HANDOFF.md)
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest -q
+python -m wti_apo_replication.synthetic --paths 4096 --seed 2026
+```
 
-No software license or citation metadata is assigned until the releasable materials and their rights have been reviewed. Public visibility of this repository does not by itself grant permission to reuse unpublished code.
+The demonstration returns a simulated price, a Monte Carlo standard error, a path count, and the seed. These numbers are **synthetic**, not observed WTI settlements. The unit tests check an analytic zero-volatility limit, seeded reproducibility, and invalid inputs.
+
+## Repository files
+
+| File | Purpose |
+|---|---|
+| [`pyproject.toml`](pyproject.toml) | Installable Python package, dependencies, and development version |
+| [`environment.yml`](environment.yml) | Conda environment for development |
+| [`LICENSE`](LICENSE) | MIT license for original public source and documentation |
+| [`CITATION.cff`](CITATION.cff) | GitHub citation metadata, suitable for later Zenodo ingestion |
+| [`CHANGELOG.md`](CHANGELOG.md) | Version and release history |
+| [`docs/zenodo_release.md`](docs/zenodo_release.md) | Release checklist and Zenodo integration instructions |
+| [`docs/reproducibility.md`](docs/reproducibility.md) | Scientific limits and reproduction boundaries |
+| [`docs/release_manifest.md`](docs/release_manifest.md) | Rights/provenance approvals for public materials |
+| [`AGENTS.md`](AGENTS.md), [`HANDOFF.md`](HANDOFF.md) | AI-agent instructions and implementation handoff |
+
+Automated CI runs only quick tests, syntax/metadata validation, and a tracked-file privacy audit. A **manual-only release preview** can build a source distribution and wheel without publishing a release or archiving to Zenodo.
+
+## Licensing, citation, and privacy
+
+MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific code, numerical results, and market-derived aggregates require scientific and redistribution-rights review before copying.
+
+[`CITATION.cff`](CITATION.cff) contains preliminary attribution but **no invented DOI**. Once an authorized GitHub Release is archived by Zenodo, cite the verified version-specific DOI. Do **not** cite this scaffold as a reproduction of any unpublished manuscript.

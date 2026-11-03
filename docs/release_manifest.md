@@ -1,16 +1,18 @@
-# Public release manifest
+# Public release manifest and rights audit
 
-**Stage:** no scientific files approved for publication yet.
+**Stage: pre-release development; full manuscript replication not authorized for public release.**
 
-Before merging a release PR, expand this table for **each** proposed file or logically grouped output.
+| Candidate | Rights and origin | Verification | Status |
+|---|---|---|---|
+| Python metadata, docs, CI, license, citation | Original public project files; MIT | Metadata validation and CI | Public development |
+| `src/wti_apo_replication/synthetic.py` | New independent illustrative GBM code; MIT | Analytic/deterministic/input unit tests | Public development, not manuscript reproduction |
+| Barchart/Databento market records | Third-party commercial licenses | Not eligible for public transfer | Excluded |
+| Empirical models and posterior integration | Private research workspace | No independent public reproduction | Not released |
+| Derived market tables/figures | Publication and rights review pending | Not verified or approved | Not released |
+| Full reproducibility snapshot | To be audited | Version, numerical comparisons, env provenance missing | Not released |
 
-| Path | Origin and reviewed source revision | Rights / vendor constraint | Validation | Release decision |
-|---|---|---|---|---|
-| Publication-specific code | Pending | Pending license review | Not run in public repo | Not released |
-| Synthetic fixtures | Pending | Must be independently generated and safe | Not run | Not released |
-| Market data | Commercial third-party inputs | Cannot be redistributed | N/A | Excluded |
-| Aggregate empirical tables and plots | Pending rights and provenance audit | Must be checked for redistribution rights | Not verified | Not released |
+## File-level scientific release gate
 
-The publication release must identify the matching code commit, environment, tested commands, expected outputs, missing restricted inputs and release approver. Do not claim a figure or table is reproducible until verified independently against saved results.
+For every future file, record its relative path, origin and checksum, applicable copyright/vendor terms, whether it might expose licensed observations or sensitive identifiers, reproducible command, expected numerical result/tolerance and author approval. Preserve original scientific evidence in the private workspace. Do not copy private Git history or unpublished internal material.
 
-Keep the complete private experiment ledger in the private workspace. Do **not** copy internal audit trails, author-only metadata or commercial data to this public manifest.
+Before a stable release, replace this pre-release status with an explicit **Stage: public-release-approved** assertion only after all scientific and licensing gates pass.

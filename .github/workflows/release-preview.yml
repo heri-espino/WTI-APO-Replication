@@ -1,0 +1,39 @@
+name: release-preview
+
+# Manual-only inspection of a would-be wheel and sdist. No tags, release or DOI.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install development and release-validation tools
+        run: |
+          python -m pip install -e ".[dev]"
+          python -m pip install cffconvert==2.0.0
+      - name: Validate safe source and citation metadata
+        run: |
+          python scripts/verify_public_scaffold.py
+          python scripts/validate_release_metadata.py
+          cffconvert --validate
+          python -m pytest -q
+      - name: Build preview wheel and source distribution
+        run: python -m build
+      - name: Upload unapproved preview distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: wti-apo-replication-preview
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 30

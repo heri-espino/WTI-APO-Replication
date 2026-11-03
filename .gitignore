@@ -1,4 +1,4 @@
-# Developer files and credentials
+# Local tooling and credentials
 .env
 .env.*
 !.env.example
@@ -14,7 +14,15 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Never copy commercial market data or local research stores into public Git.
+# Local builds and packages
+build/
+dist/
+*.egg-info/
+*.whl
+*.tar.gz
+*.tgz
+
+# Commercial and sensitive data (not licensed for public redistribution)
 data/
 *.dbn
 *.dbn.zst
@@ -33,7 +41,7 @@ data/
 *.gz
 *.zst
 
-# Large and potentially identifying compiled artifacts require explicit review.
+# Publication assets require separate human review
 *.pdf
 *.png
 *.svg

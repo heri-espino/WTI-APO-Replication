@@ -1,32 +1,31 @@
-# Reproducibility plan (not yet a released package)
+# Reproducibility boundaries
 
-This document describes the **release criteria**; it does not claim that the manuscript can already be reproduced from this public repository.
+**Pre-release:** The package is installable and its illustrative synthetic model is testable, but the manuscript's WTI APO empirical and Bayesian analyses are **not publicly replicated yet**.
 
-## Replication boundaries
-
-| Layer | Planned material | Current public availability |
+| Layer | Present | Missing for manuscript replication |
 |---|---|---|
-| Deterministic methods and simulations | Reviewed implementation, tests, seed/configuration and synthetic examples | Not released |
-| Commercial WTI APO/futures observations | Provider identifiers, retrieval schema, date cutoffs, processing instructions | Raw observations not released; licensing required |
-| Empirical analysis | Reviewed processing and valuation scripts with configurable licensed-data input | Not released |
-| Results and figures | Approved aggregate tables, provenance hashes, scripts for regenerating figures | Not released; rights review pending |
-| Environment | Pinned dependencies, platform-specific instructions and verification commands | Not released |
+| Python packaging | `pyproject.toml`, Conda environment, installation and CI tests | Fully frozen, cross-platform publication environment |
+| Synthetic arithmetic Asian | Independent risk-neutral spot-GBM Monte Carlo example; fixed seed and zero-volatility tests | Paper-specific futures term structure and volatility-posterior integration |
+| Commercial market observations | None | Authorized provider inputs and acquisition instructions |
+| Empirical numerical results | None | Reviewed scripts, rights-cleared aggregates and result audits |
+| Publication figures/tables | None | Source-to-figure code, configuration and verified numerical comparisons |
 
-## Minimum release requirements
+## Synthetic demonstration
 
-1. Select only reviewed source files from the private development workspace, without importing its Git history.
-2. Audit the license for every included library, file, plot and derived numerical result. Exclude raw Barchart/Databento records and any restricted derivatives.
-3. Provide an independently runnable synthetic example with fixed seed, assumptions, expected tolerance and test results.
-4. Document how separately licensed market inputs must be obtained. Avoid suggesting that private or commercial data can be requested from the author without provider permission.
-5. Include clean-environment installation instructions, exact code version, test commands and scripts to regenerate each publicly reproducible table/figure.
-6. Label results that cannot be reproduced without licensed data. Distinguish reproduction from partial or synthetic verification.
-7. Obtain explicit author approval for the audited public release, and add a license and citation metadata only after the appropriate rights and double-anonymized-review assessment.
-8. Revisit this page to replace each "Not released" cell with a verified release path or a justified limitation.
+For `S_t = S_0 exp((r - sigma^2/2)t + sigma W_t)`, monitor `n` equally spaced times `t_j = jT/n`. The estimated discounted payoff is
 
-## Scientific conventions
+`exp(-r T) max(n^{-1} sum_j S_{t_j} - K, 0)`.
 
-Physical-measure inference and risk-neutral valuation are different stages. Any replication scripts must specify model assumptions, settlement-proxy status, information cutoffs, volatility-estimator definitions and limitations on claims of prospective forecasting or trading advantage. Do not infer missing empirical results from manuscript prose.
+The implementation uses seeded, batched NumPy pseudo-random sampling and returns a sample standard error. It is **not** an empirical WTI futures-curve, partially fixed average, or posterior-integrated pricing model.
 
-## Current verification
+Run:
 
-The public CI only checks repository safety and documentation consistency. **It does not execute the paper's numerical experiments.**
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest -q
+python scripts/verify_public_scaffold.py
+python scripts/validate_release_metadata.py
+wti-apo-synthetic --seed 2026 --paths 4096 --observations 12
+```
+
+For a future publication release, add tested numerical configurations, independent source and model checks, approved derived outputs, exact environment provenance and documentation mapping each claimed figure and table to a reproducible command.
