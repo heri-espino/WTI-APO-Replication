@@ -1,6 +1,6 @@
 # Reproducibility boundaries
 
-**Pre-release:** The package now includes the author-selected, data-free inference/pricing modules and synthetic tests, but the manuscript's full WTI APO empirical and Bayesian results are **not publicly replicated yet**.
+**v1.0.0 scoped verification:** The package includes author-selected inference/pricing modules, synthetic tests and archived synthetic evidence. **The manuscript’s licensed-market empirical results have not been independently reproduced in this public repository.** This is a software/synthetic release, not complete empirical replication.
 
 | Layer | Present | Missing for manuscript replication |
 |---|---|---|

@@ -1,6 +1,6 @@
 # WTI APO Replication
 
-**Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
+**Software version: v1.0.0 — approved scope: Bayesian and Asian-option methods with synthetic benchmarks.** The full licensed-market empirical study is **not** reproduced by this archive. A Zenodo DOI is available only after a GitHub Release has been ingested; check [GitHub Releases](https://github.com/heri-espino/WTI-APO-Replication/releases) for the publication status.
 
 This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed. Data-format adapters for independently licensed inputs and synthetic-only adapter tests are available; see [licensed input requirements](docs/licensed_inputs.md).
 
@@ -41,7 +41,7 @@ The original `--preset ten-million` run is resource-intensive and remains manual
 
 | File | Purpose |
 |---|---|
-| [`pyproject.toml`](pyproject.toml) | Installable Python package, dependencies, and development version |
+| [`pyproject.toml`](pyproject.toml) | Installable Python package, dependencies, and stable software version `1.0.0` |
 | [`environment.yml`](environment.yml) | Conda environment for development |
 | [`LICENSE`](LICENSE) | MIT license for original public source and documentation |
 | [`CITATION.cff`](CITATION.cff) | GitHub citation metadata, suitable for later Zenodo ingestion |
@@ -51,10 +51,10 @@ The original `--preset ten-million` run is resource-intensive and remains manual
 | [`docs/release_manifest.md`](docs/release_manifest.md) | Rights/provenance approvals for public materials |
 | [`AGENTS.md`](AGENTS.md), [`HANDOFF.md`](HANDOFF.md) | AI-agent instructions and implementation handoff |
 
-Automated CI runs only quick tests, syntax/metadata validation, and a tracked-file privacy audit. A **manual-only release preview** can build a source distribution and wheel without publishing a release or archiving to Zenodo.
+Automated CI runs only quick tests, citation validation, scientific scope checks, and a tracked-file privacy audit. A **manual-only release preview** builds wheel/source archives without publication. The separate **manual-only verified release workflow** creates the GitHub tag `v1.0.0` only after validation and confirmation that Zenodo integration is enabled.
 
 ## Licensing, citation, and privacy
 
 MIT applies to **original public files** here and is not a license for private code or vendor-owned records. Publication-specific **empirical orchestration**, numerical market results, and market-derived aggregates require scientific and redistribution-rights review before copying. The subset of model functions now included was selected for being self-contained and data-free; the original private Git history was not imported.
 
-[`CITATION.cff`](CITATION.cff) contains preliminary attribution but **no invented DOI**. Once an authorized GitHub Release is archived by Zenodo, cite the verified version-specific DOI. Do **not** cite this code-only development branch as an independently verified reproduction of unpublished empirical findings.
+[`CITATION.cff`](CITATION.cff) records **version 1.0.0** and the approved release metadata, but does **not** invent a DOI. After Zenodo ingests an authorized GitHub Release, cite its verified version-specific DOI. This package is **methods and synthetic benchmarks**, not verified reproduction of unpublished licensed-market empirical findings. See [scoped verification](docs/verified_replication.md).

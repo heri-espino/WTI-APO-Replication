@@ -1,6 +1,6 @@
-# WTI APO Replication — software release scope
+# WTI APO Replication v1.0.0 — software and synthetic-evidence release
 
-This distribution includes Bayesian inference and Asian-option valuation methods, synthetic regression tests, recorded synthetic option-pricing evidence, and a historical 10-million-history synthetic mechanism-map aggregate. Offline analysis scripts can consume separately licensed market inputs.
+This **stable software version (1.0.0)** includes Bayesian inference and Asian-option valuation methods, synthetic regression tests, recorded synthetic option-pricing evidence, and a historical 10-million-history synthetic mechanism-map aggregate. Offline analysis scripts can consume separately licensed market inputs.
 
 **Verification:** See docs/environment_audit.md, docs/reproducibility.md, docs/release_manifest.md, and the GitHub Actions run for the release.
 

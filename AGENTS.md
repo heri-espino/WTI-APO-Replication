@@ -1,6 +1,6 @@
 # Public repository agent instructions
 
-**This is a pre-release public repository, never a mirror of the private research workspace.**
+**This repository publishes scoped v1.0.0 research software and synthetic benchmarks, not a mirror of the private research workspace or a full empirical replication.**
 
 Before changes, inspect README.md, AGENTS.md, HANDOFF.md, docs/reproducibility.md, docs/release_manifest.md, docs/zenodo_release.md, pyproject.toml, current scripts, tests and PRs. Preserve all existing decisions.
 
@@ -23,7 +23,7 @@ python scripts/verify_public_scaffold.py
 python scripts/validate_release_metadata.py
 ```
 
-The `--release` gate is intentionally blocked until publication-specific verification and author approval.
+The `--release` gate validates the author-approved **methods-and-synthetic** scope only. It must not be represented as evidence of complete licensed-market empirical replication.
 
 ## Release automation safety
 
