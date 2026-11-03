@@ -1,0 +1,15 @@
+{
+  "data": "synthetic fixed inputs only; no vendor or market observations",
+  "experiment": "experiment001",
+  "historical_return_count": 63,
+  "kind": "synthetic_only",
+  "model": "Gaussian physical-measure GBM + Curran one-factor futures Asian approximation",
+  "pi_minus_pm": 0.0005641376884470972,
+  "pi_price": 1.0083270816192058,
+  "pm_price": 1.0077629439307587,
+  "posterior_sigma_mean": 0.24739605304318488,
+  "posterior_sigma_variance": 0.0004948986678976197,
+  "posterior_weights_sum": 0.9999999999999998,
+  "seed": 2026,
+  "sigma_grid_points": 301
+}
