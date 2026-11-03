@@ -8,7 +8,7 @@
 | Numerical scientific core | Gaussian/Student-t Bayesian inference, sigma quadrature, Asian futures pricing, first-nearby mapping, partially fixed WTI APO Monte Carlo, Curran approximation, synthetic validation | Full production experiment orchestration and recorded empirical input provenance |
 | Synthetic arithmetic Asian | Independent risk-neutral spot-GBM Monte Carlo example; fixed seed and zero-volatility tests | Published experiment configuration and full numerical results |
 | Commercial market observations | No raw observations; publicly reviewed parsing interfaces with synthetic tests | Authorized provider inputs and complete acquisition/cutoff instructions |
-| Empirical numerical results | None | Reviewed scripts, rights-cleared aggregates and result audits |
+| Empirical numerical results | No licensed market results; synthetic mechanism-map aggregate archived separately | Reviewed scripts, rights-cleared aggregates and result audits |
 | Publication figures/tables | None | Source-to-figure code, configuration and verified numerical comparisons |
 
 ## Synthetic demonstration
@@ -34,3 +34,9 @@ For a future publication release, add tested numerical configurations, independe
 ## Curated scientific source boundary
 
 The `bayesian_asian_options` package contains the author-controlled numerical routines selected from the private workspace, without commercial records or private history. The curated regression tests exercise only synthetic inputs. Full empirical reproduction requires model configuration, earlier-data cutoffs, licensed market input schemas, transaction/settlement proxy handling, and an independent comparison with every reported table and figure. The original private research tree and LFS data are not redistributed.
+
+## Archived synthetic mechanism map (experiment002)
+
+The public repository now preserves the original large synthetic mechanism-map driver and historical aggregate output from **10,000,000 generated histories**. It uses dense Gaussian volatility posterior quadrature (4,097 nodes) and a Curran-style Asian futures approximation over 168 artificial option scenarios. The historical summary has 5,880 scenario rows; the original report's internal machine and private Git metadata were redacted. Automatic tests check a tiny deterministic cell rather than rerunning the full experiment. Full reproducibility of the historical run is **not yet independently established**.
+
+See [experiment002](../experiments/experiment002/README.md). Market-data comparisons, price-proxy validation, vendor timestamps and implied-volatility cutoffs still require separately licensed inputs and scientific audit.
