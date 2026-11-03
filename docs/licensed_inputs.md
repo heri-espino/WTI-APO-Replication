@@ -23,3 +23,9 @@ The actual vendor subscription, query, licensed dataset, schema version, timezon
 - **Validation:** The current adapter tests use only synthetic fixtures. They do not establish that every real vendor file and every manuscript empirical calculation has been independently reproduced.
 
 For a full future reproduction, a researcher should obtain authorized Barchart and/or Databento access separately and execute a verified, publication-specific pipeline. That pipeline has not yet been released here.
+
+## Empirical command entry points (code only)
+
+The available CLI modules are `experiments.wti_apo_empirical`, `experiments.wti_apo_date_panel`, `experiments.wti_curran_benchmark`, and `experiments.wti_apo_implied_volatility`. Inspect their `--help` output and implementation before use. Some workflows can optionally acquire public Yahoo/Treasury data; avoid automatic downloads or commercial requests unless you intend and authorize them.
+
+No private market-data tables, raw vendor observations, per-contract price histories or licensed source archives were copied. The implementation's default `data/` directories are intentionally unpopulated. Obtain all licensed inputs independently and verify timestamps, source conventions, and output publication rights.
