@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "wti-apo-replication"
 version = "0.1.0.dev0"
-description = "Open replication infrastructure and independent synthetic Asian-option checks"
+description = "Audited GBM posterior inference and Asian-option Monte Carlo with synthetic replication experiments"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
@@ -25,6 +25,7 @@ dependencies = ["numpy>=2.0,<3.0"]
 dev = [
   "pytest>=8.0,<10.0",
   "PyYAML>=6.0,<7.0",
+  "scipy>=1.13,<2.0",
   "build>=1.2,<2.0",
 ]
 
