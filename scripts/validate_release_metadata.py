@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import tomllib
 from pathlib import Path
 
@@ -60,9 +61,9 @@ def check_metadata(*, release: bool = False) -> list[str]:
 
     if release:
         manifest = (ROOT / "docs/release_manifest.md").read_text()
-        if ".dev" in version or "a" in version or "b" in version:
+        if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
             errors.append("Development/prerelease version is not a stable release")
-        if "Stage: public-release-approved" not in manifest:
+        if not re.search(r"(?m)^\*\*Stage: public-release-approved\*\*$", manifest):
             errors.append("Scientific release manifest has not been approved")
         if cff.get("version") != version or not cff.get("date-released"):
             errors.append("Version and date-released required in CITATION.cff for release")
