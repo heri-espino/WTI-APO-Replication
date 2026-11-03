@@ -1,15 +1,19 @@
-# Handoff — public replication preparation
+# Handoff — Zenodo-ready repository foundation
 
-**Status:** pre-release. This repository is *not* a verified replication of a scientific article. No publication-specific software or numerical results have been released.
+**Stage:** `0.1.0.dev0` pre-release. The repository has an MIT license, `CITATION.cff`, `pyproject.toml`, `environment.yml`, a minimal installable package and a standalone synthetic Monte Carlo example. **No GitHub Release, Zenodo record, DOI, commercial data or manuscript-specific empirical replication is published.**
 
-**Repository relationship:** the complete research workspace is maintained separately and privately. There is no automatic synchronization or copied Git history. Do not provide its URL in anonymous-review documents.
+## Architecture
 
-**What is safe here now:** release instructions, scaffolding, safety checks, and synthetic/example placeholders. Do not confuse a scaffold test with numerical validation.
+- `pyproject.toml`: version/install source of truth; `environment.yml`: Conda starting environment (not a lockfile).
+- `CITATION.cff`: the only Zenodo citation metadata input; `.zenodo.json` intentionally absent.
+- `src/wti_apo_replication/synthetic.py`: synthetic, no vendor data, not the private paper model.
+- `scripts/verify_public_scaffold.py`: public privacy and data guard.
+- `scripts/validate_release_metadata.py`: metadata checks; `--release` blocked while publication reproduction and approval are incomplete.
+- `docs/zenodo_release.md`: GitHub–Zenodo sequence, DOI and version guidance.
+- `docs/release_manifest.md`: file-by-file rights gate for future scientific code/results.
 
-**Next authorized release task:** select files from the private research workspace using an explicit allowlist; audit intellectual-property and data rights, redact paths and identifiers, preserve licenses and provenance, and only then submit a public PR containing code, tests, dependencies and permitted outputs.
+## Next steps
 
-**Mandatory checks before asserting reproducibility:** successful clean-environment run, fixed seeds/tolerances, source-to-result provenance, non-proprietary test fixtures, and actual comparison to paper tables and figures. Retain a release manifest and record a reproducible commit/tag.
+Curate and test publication-specific source **only after** a file-level licensing and scientific audit. Add an approved license-compatible snapshot (never mirror private history), tests with fixed seeds, clean environment, permitted aggregate outputs and an independent source-to-paper comparison. Document access instructions for separately licensed Barchart/Databento market inputs, without publishing the records.
 
-**Privacy:** no commercial Barchart/Databento observations, no private research history, no credentials. Public source and derivatives must be verified against vendor terms before release.
-
-**GitHub Actions:** lightweight public-scaffold CI only. Heavy simulations and publication builds remain manual-only.
+Release preview is manual-only; no tags or DOI will be created by CI. Do not merge PRs or publish releases without explicit authorization.

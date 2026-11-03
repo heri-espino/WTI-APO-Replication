@@ -1,7 +1,7 @@
-# Security and data handling
+# Security and licensed-data policy
 
-**Never report secrets, proprietary datasets, personal identifiers or private source paths in public issues.**
+Never place private research history, paid Barchart/Databento records, credentials, personal paths or confidential correspondence in public issues, commits or PRs.
 
-For a security concern involving this public project, use GitHub's private vulnerability-reporting interface if enabled, or contact the maintainers privately through an established channel. If private reporting is unavailable, open a public issue **without exploit details or sensitive files** asking for a private contact method.
+Report sensitive vulnerabilities using GitHub's private vulnerability reporting if enabled. Otherwise request a private reporting channel without publishing secrets or exploitation details.
 
-Do not commit market-data service tokens, paid Barchart or Databento observations, restricted derived records or copies of a private repository. The public safety audit is a first-pass safeguard, not a substitute for human rights and privacy review.
+The public tracked-file scanner is a first-pass CI safeguard, not a substitute for human review of licensing, provenance and confidentiality.
