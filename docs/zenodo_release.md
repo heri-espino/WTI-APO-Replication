@@ -34,6 +34,12 @@ This repository is a **pre-release development workspace**. Do not create a GitH
 
 **Capabilities:** This connection can edit GitHub source and merge PRs but cannot create GitHub Releases or configure the author's Zenodo account. Once the release gates are satisfied, the repository owner must publish a GitHub Release and enable GitHub-to-Zenodo archiving (or use an authorized interactive workflow).
 
+## Manual-only verified release workflow
+
+A new workflow `.github/workflows/publish-verified-release.yml` can publish an approved GitHub Release **only** when manually dispatched on `main`. It requires a stable version equal to `pyproject.toml`, a successful `scripts/validate_release_metadata.py --release` gate, citation validation, privacy scanning, passing tests, wheel/sdist validation and two explicit author checkboxes confirming scientific/licensing/anonymity review and that Zenodo has already been enabled. It publishes the version tag with release notes and SHA256 checksums and refuses to overwrite existing tags/releases.
+
+**This workflow must not be dispatched during pre-release development:** `0.1.0.dev0` intentionally fails the stable-version and scientific-evidence gate. A GitHub workflow cannot verify the owner's actual Zenodo authorization; the repository owner must enable Zenodo integration before dispatch. Publishing a release is an irreversible public step and may affect double-anonymized peer review.
+
 ## First Zenodo archive
 
 1. Sign in to [Zenodo](https://zenodo.org), connect GitHub, select its GitHub section, choose **Sync now**, and enable `heri-espino/WTI-APO-Replication`.
