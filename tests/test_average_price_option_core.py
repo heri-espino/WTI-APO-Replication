@@ -34,7 +34,11 @@ def test_call_put_matched_path_parity():
     s=state()
     call=wti_average_price_option_mc(strike=101.,option_type="call",**s)
     put=wti_average_price_option_mc(strike=101.,option_type="put",**s)
-    assert abs(call.price-put.price) < 0.15
+    expected = np.exp(-s["rate"]*s["time_to_expiry"]) * (
+        expected_average_level(s["realized_fixings"], s["forward_fixings"]) - 101.
+    )
+    # Matched-path Monte Carlo error affects the average of discounted payoff.
+    assert abs((call.price-put.price)-expected) < 0.05
 
 def test_common_seed_posterior_prices():
     s=state()
