@@ -4,6 +4,8 @@ Versions will follow Semantic Versioning when scientific release criteria are me
 
 ## Unreleased — `0.1.0.dev0`
 
+- Preserve a data-free ten-million synthetic mechanism-map source and historical aggregate tables under sequential `experiment002`, with source provenance and audit tests.
+
 - Set up a clean public MIT-licensed Python project with `pyproject.toml` and Conda `environment.yml`.
 - Add `CITATION.cff` metadata for future GitHub-to-Zenodo software archiving.
 - Include an independent synthetic spot-GBM arithmetic Asian Monte Carlo demonstration and fast tests.

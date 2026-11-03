@@ -14,6 +14,10 @@
 | Derived market tables/figures | Publication and rights review pending | Not verified or approved | Not released |
 | Full reproducibility snapshot | To be audited | Version, numerical comparisons, env provenance missing | Not released |
 
+| `experiments/experiment002/run.py` | Curated synthetic mechanism driver; source blob `8413de9b222cddf28f38dbf9356ac910186e1faa` | Tiny-cell deterministic test; 10M rerun not performed | Public synthetic source, manual large jobs only |
+| `tests/test_experiment002.py` | Original tiny-cell test; blob `fef3ad906b80273d66ea2b3cf29535d5961f8984` | CI seed/allocation/restart checks | Public |
+| `results/experiment002/archive_10m/` | Pure synthetic 10M historical aggregate results: original CSV blobs `8c7f2e3056a45f6963643e9aa4e3d3240274ea98`, `3ae4617cbbe4e59f89f28208fb2c2f101a4794ec`, `abd5359a8684c614a55d28476a8ed4dbe5903dc2`, `bc22ecc3969f40d7d75afcab1c5537062d327a78` | 5,880/35/168/100 numeric rows checked; archived report redacts machine and private commit identifiers | Historical synthetic outputs, not independent rerun |
+
 ## File-level scientific release gate
 
 For every future file, record its relative path, origin and checksum, applicable copyright/vendor terms, whether it might expose licensed observations or sensitive identifiers, reproducible command, expected numerical result/tolerance and author approval. Preserve original scientific evidence in the private workspace. Do not copy private Git history or unpublished internal material.

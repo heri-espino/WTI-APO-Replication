@@ -50,3 +50,9 @@ data/
 *.zip
 *.tar
 *.7z
+
+# Audited, synthetic-only numerical tables from the historical 10M experiment.
+!results/experiment002/archive_10m/mechanism_map_summary.csv
+!results/experiment002/archive_10m/posterior_cell_summary.csv
+!results/experiment002/archive_10m/scenario_grid.csv
+!results/experiment002/archive_10m/top_100_adverse_scenarios.csv
