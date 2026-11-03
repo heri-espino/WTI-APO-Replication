@@ -12,5 +12,6 @@ Versions will follow Semantic Versioning when scientific release criteria are me
 
 - Curated numerical methods for GBM inference, volatility quadrature and Asian option pricing from the author's research, with scientific unit tests.
 - Added synthetic experiment001 for posterior integration versus posterior-mean plug-in pricing.
+- Curated Curran conditioning approximation, the ten-million-history mechanism-map source and historical aggregate CSV/JSON outputs, with privacy-redacted run metadata and deterministic tiny-cell checks.
 
 **Not released:** private history, licensed Barchart/Databento observations, empirical results, the full manuscript-scale mechanism experiment, stable GitHub Release or DOI.
