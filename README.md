@@ -2,7 +2,7 @@
 
 **Status: pre-release (`0.1.0.dev0`). No stable software release, Zenodo DOI, or manuscript replication dataset exists yet.**
 
-This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed.
+This is an independent public software workspace for future reproducibility of arithmetic-average option research. It is **not** a copy of the private research repository. The Python distribution now includes a curated **Bayesian inference and Asian-option pricing core** from the author-controlled research workspace, plus a separate independent spot-GBM example. The public code covers inference, numerical integration, Curran conditioning, first-nearby mapping, and partial-fixing Monte Carlo; it does **not** reproduce the full manuscript empirical results without separately licensed data and validated analysis pipelines. Third-party Barchart and Databento market records are not distributed. Data-format adapters for independently licensed inputs and synthetic-only adapter tests are available; see [licensed input requirements](docs/licensed_inputs.md).
 
 ## Quick start
 
