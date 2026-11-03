@@ -27,5 +27,9 @@ jobs:
         run: python scripts/verify_public_scaffold.py
       - name: Validate citation, environment and build metadata
         run: python scripts/validate_release_metadata.py
+      - name: Validate CITATION.cff with the official CFF schema
+        run: |
+          python -m pip install cffconvert==2.0.0
+          cffconvert --validate
       - name: Run unit tests
         run: python -m pytest -q
